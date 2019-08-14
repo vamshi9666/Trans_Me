@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
-import { MatTableModule, MatInputModule, MatButtonModule, MatDialogModule } from '@angular/material'
+import { MatTableModule, MatInputModule, MatButtonModule, MatDialogModule, MatSelectModule, MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApplyModalComponent } from './apply-modal/apply-modal.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { RoutesService } from './routes.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,10 +24,14 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatDialogModule,
     HttpClientModule,
-
-    FormsModule
+    MatSelectModule,
+    FormsModule,
+    MatFormFieldModule
+    ,
+    ReactiveFormsModule
   ],
   providers: [RoutesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ApplyModalComponent]
 })
 export class AppModule { }

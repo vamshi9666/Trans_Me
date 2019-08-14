@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
   }
   openApplyModal(destinationId: string) {
     this.dialog.open(ApplyModalComponent, {
-      height: '400px',
-      width: '600px',
+      // height: '400px',
+      // width: '600px',
       data: {
         id: destinationId
       }
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
       })
 
       this.data = arr;
-      console.log("dta", this.data);
+      console.log("data", this.data);
 
 
     })
