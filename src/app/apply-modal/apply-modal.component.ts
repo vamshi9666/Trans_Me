@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormControl } from '@angular/forms'
+import { RoutesService } from '../routes.service';
 
 @Component({
   selector: 'app-apply-modal',
@@ -12,6 +13,7 @@ export class ApplyModalComponent implements OnInit {
   studentName = new FormControl("");
   constructor(
     public dialogRef: MatDialogRef<ApplyModalComponent>,
+   public  routesService : RoutesService,
     @Inject(MAT_DIALOG_DATA) public data: {
       id: String
     }) {
@@ -22,8 +24,15 @@ export class ApplyModalComponent implements OnInit {
 
   }
   applyStudent() {
-    console.log(" name is ", this.studentName);
-    console.log(" student id ", this.studentId);
+    this.routesService.addStudentroute({
+      routeId: this.data.id,
+      studentName:this.studentName.value,
+      studentId:this.studentId.value
+
+    }).subscribe(data => {
+      console.log('data ::::', data);
+      this.dialogRef.close()
+    })
 
   }
 
