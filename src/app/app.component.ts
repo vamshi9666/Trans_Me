@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  openApplyModal(destinationId: string) {
+  openApplyModal(destinationId: String) {
+    console.log(" dieskfjdskljfskl-__---_______", destinationId)
     this.dialog.open(ApplyModalComponent, {
       // height: '400px',
       // width: '600px',
@@ -39,8 +40,10 @@ export class AppComponent implements OnInit {
       const arr = []
       data.data.map((route: any, i) => {
         arr.push({
+          
           index: i,
           route_index: i * 2,
+          routeId: route._id,
           destination: route.destination,
           no_seats: route.no_seats
         })
