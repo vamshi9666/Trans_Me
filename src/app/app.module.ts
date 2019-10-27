@@ -1,16 +1,27 @@
-import { BrowserModule, } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { MatTableModule, MatInputModule, MatButtonModule, MatDialogModule, MatSelectModule, MatFormFieldModule, MatCardModule, MatSpinner, MatProgressSpinnerModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ApplyModalComponent } from './apply-modal/apply-modal.component';
-import { HttpClientModule } from '@angular/common/http';
-import { RoutesService } from './routes.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminComponent } from './admin/admin.component';
-import { LoginComponent } from './login/login.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ListComponent } from "./list/list.component";
+import {
+  MatTableModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatCardModule,
+  MatSpinner,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ApplyModalComponent } from "./apply-modal/apply-modal.component";
+import { HttpClientModule } from "@angular/common/http";
+import { RoutesService } from "./routes.service";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AdminComponent } from "./admin/admin.component";
+import { LoginComponent } from "./login/login.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +41,14 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     MatSelectModule,
     FormsModule,
-    MatFormFieldModule
-    , MatCardModule,
+    MatFormFieldModule,
+    MatCardModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [RoutesService],
   bootstrap: [AppComponent],
   entryComponents: [ApplyModalComponent]
 })
-export class AppModule { }
+export class AppModule {}

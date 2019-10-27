@@ -1,1 +1,44 @@
-<p>list works!</p>
+<mat-toolbar
+  >List of routes available
+
+  <button mat-button mat-raised-button color="warn" (click)="logout()">
+    LOGOUT
+  </button>
+</mat-toolbar>
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="index">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let element">{{ element.index }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="route_index">
+    <th mat-header-cell *matHeaderCellDef>Bus No</th>
+    <td mat-cell *matCellDef="let element">{{ element.route_index }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="destination">
+    <th mat-header-cell *matHeaderCellDef>Destination</th>
+    <td mat-cell *matCellDef="let element">{{ element.destination }}</td>
+  </ng-container>
+  <ng-container matColumnDef="no_seats">
+    <th mat-header-cell *matHeaderCellDef>Available no off seats</th>
+    <td mat-cell *matCellDef="let element">{{ element.no_seats }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>action</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button (click)="openApplyModal(element._id)">
+        select
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
