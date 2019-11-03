@@ -16,20 +16,29 @@ export class ApplyModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: {
       id: String;
+      destination: String;
     }
   ) {}
 
   ngOnInit() {}
+  onNoClick() {
+    console.log(" two");
+    this.dialogRef.close();
+  }
   applyStudent() {
-    const user = this.authService.getUser();
+    const userId = localStorage.getItem("USER_ID");
     console.log(" current user is ", this.data);
+    console.log(" three");
+
     this.routesService
       .addStudentroute({
         routeId: this.data.id,
-        studentId: user._id
+        studentId: userId
       })
       .subscribe(data => {
         console.log("data ::::", data);
+        alert(` successfully applied for ${this.data.destination} `);
+
         this.dialogRef.close();
       });
   }

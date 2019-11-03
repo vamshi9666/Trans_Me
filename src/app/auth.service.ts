@@ -8,12 +8,23 @@ import { API_URL } from "./constants";
 })
 export class AuthService {
   user = null;
+  userId = null;
   constructor(private http: HttpClient) {}
   login(email: String, password: String): Observable<any> {
     return this.http.post(API_URL + "/user/login", { email, password });
   }
-  singUp(email: String, password: String): Observable<any> {
-    return this.http.post(API_URL + "/user/signup", { email, password });
+  signUp(
+    email: String,
+    password: String,
+    name: String,
+    collegeId: String
+  ): Observable<any> {
+    return this.http.post(API_URL + "/user/signup", {
+      email,
+      password,
+      collegeId,
+      name
+    });
   }
   setUser(user) {
     this.user = user;
@@ -21,5 +32,11 @@ export class AuthService {
   }
   getUser() {
     return this.user;
+  }
+  setUserId(id) {
+    this.userId = id;
+  }
+  getUserId() {
+    return this.userId;
   }
 }
