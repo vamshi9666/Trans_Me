@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
     public dialog: MatDialog,
     public routeService: RoutesService, // public data: [],
     public router: Router
-  ) {}
+  ) { }
   displayedColumns: string[] = [
     "index",
     "route_index",
@@ -56,6 +56,6 @@ export class ListComponent implements OnInit {
   }
   logout() {
     localStorage.removeItem("AUTH_TOKEN");
-    this.router.navigate(["/"]);
+    window.location.replace('/')
   }
 }

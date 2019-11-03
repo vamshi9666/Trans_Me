@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormControl } from "@angular/forms";
 import { AuthService } from "../auth.service";
+import { MatDialog } from '@angular/material';
+import { SignupModalComponent } from '../signup-modal/signup-modal.component';
 
 @Component({
   selector: "app-login",
@@ -13,9 +15,9 @@ export class LoginComponent implements OnInit {
   password = new FormControl("");
   error: String;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService, private dailog: MatDialog) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   login() {
     console.log(this.auth);
     this.auth.login(this.email.value, this.password.value).subscribe(
@@ -26,6 +28,8 @@ export class LoginComponent implements OnInit {
         this.auth.setUser(data.user);
 
         this.router.navigate(["/list"]);
+        this.email.setValue("")
+        this.password.setValue("")
       },
       err => {
         if (err.status === 404) {
@@ -35,25 +39,32 @@ export class LoginComponent implements OnInit {
           this.error = "wrong password ";
         }
         console.log(" error in logging in ", err);
+        this.email.setValue("")
+        this.password.setValue("")
       }
     );
-    {
-    }
   }
   signUp() {
-    this.auth.singUp(this.email.value, this.password.value).subscribe(
-      data => {
-        localStorage.setItem("AUTH_TOKEN", data.token);
-
-        this.auth.setUser(data.user);
-        this.router.navigate(["/list"]);
-
-        console.log("signup response is ", data);
-      },
-      err => {
-        this.error = "something went wrong in signing up . please try again";
-        console.log(" error in signing up ", err);
+    const modal = this.dailog.open(SignupModalComponent,
+      {
+        width: "250px",
+        height: "400px"
+        // maxWidth: "70vw"
       }
-    );
+    )
+    // this.auth.singUp(this.email.value, this.password.value).subscribe(
+    //   data => {
+    //     localStorage.setItem("AUTH_TOKEN", data.token);
+
+    //     this.auth.setUser(data.user);
+    //     this.router.navigate(["/list"]);
+
+    //     console.log("signup response is ", data);
+    //   },
+    //   err => {
+    //     this.error = "something went wrong in signing up . please try again";
+    //     console.log(" error in signing up ", err);
+    //   }
+    // );
   }
 }

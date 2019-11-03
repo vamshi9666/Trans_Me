@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="login-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" type="text" [formControl]="name" class="form-control" />
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput maxlength="32" placeholder="College ID" [formControl]="collegeId">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Enter your password" [formControl]="password"
+                [type]="hide ? 'password' : 'text'">
+
+        </mat-form-field>
+
+        <!-- <mat-form-field [formControl]="collegeId" > 
+        <input matInput #input maxlength="32" placeholder="Location">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    </mat-form-field> -->
+        <button mat-button>Signup</button>
+    </form>
+</div>

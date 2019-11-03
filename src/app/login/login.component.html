@@ -8,18 +8,9 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Username"
-                type="text"
-                [formControl]="email"
-                class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-              />
-              <div
-                *ngIf="submitted && f.username.errors"
-                class="invalid-feedback"
-              >
+              <input matInput placeholder="Username" type="text" [formControl]="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">
                   Username is required
                 </div>
@@ -30,14 +21,8 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Password"
-                type="password"
-                [formControl]="password"
-                class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-              />
+              <input matInput placeholder="Password" type="password" [formControl]="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
               <div *ngIf="submitted && f.password.errors" class="error"></div>
             </mat-form-field>
           </td>
@@ -54,11 +39,9 @@
   </mat-card-actions>
   If not a Member Register Here
   <mat-card-actions>
-    <form
-      action="C:\Users\targe\Downloads\shc\smart-health-consulting\src\app\authentication\register"
-    >
+    <form action="C:\Users\targe\Downloads\shc\smart-health-consulting\src\app\authentication\register">
       <button mat-raised-button (click)="signUp()" color="primary">
-        Register
+        signUp
       </button>
     </form>
   </mat-card-actions>
