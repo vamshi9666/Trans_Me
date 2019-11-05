@@ -6,7 +6,12 @@
   </button>
 </mat-toolbar>
 
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
+<table
+  style="width: 100%;"
+  mat-table
+  [dataSource]="data"
+  class="mat-elevation-z8"
+>
   <!-- Position Column -->
   <ng-container matColumnDef="index">
     <th mat-header-cell *matHeaderCellDef>#</th>

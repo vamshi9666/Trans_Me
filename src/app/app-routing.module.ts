@@ -4,6 +4,7 @@ import { AppComponent } from "./app.component";
 import { AdminComponent } from './admin/admin.component';
 import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "_admin",
     component: AdminComponent
+  },
+  {
+    path:"_admin_login",
+    component: AdminLoginComponent
   }
 
 ];

@@ -14,7 +14,10 @@ import {
   MatSpinner,
   MatProgressSpinnerModule,
   MatToolbarModule,
-  MatIconModule
+  MatIconModule,
+  MatSnackBarModule,
+  MatTabGroup,
+  MatTabsModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ApplyModalComponent } from "./apply-modal/apply-modal.component";
@@ -23,7 +26,9 @@ import { RoutesService } from "./routes.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminComponent } from "./admin/admin.component";
 import { LoginComponent } from "./login/login.component";
-import { SignupModalComponent } from './signup-modal/signup-modal.component';
+import { SignupModalComponent } from "./signup-modal/signup-modal.component";
+import { AdminLoginComponent } from "./admin-login/admin-login.component";
+import { EditModalComponent } from "./edit-modal/edit-modal.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +36,9 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
     ApplyModalComponent,
     AdminComponent,
     LoginComponent,
-    SignupModalComponent
+    SignupModalComponent,
+    AdminLoginComponent,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +57,15 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
     ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatTabsModule
   ],
   providers: [RoutesService],
   bootstrap: [AppComponent],
-  entryComponents: [ApplyModalComponent, SignupModalComponent]
+  entryComponents: [
+    ApplyModalComponent,
+    SignupModalComponent,
+    EditModalComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {}

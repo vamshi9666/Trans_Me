@@ -1,0 +1,32 @@
+<mat-card>
+  <table>
+    <tr>
+      Admin login
+    </tr>
+
+    <tr>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Username"
+          type="text"
+          [formControl]="email"
+          class="form-control"
+        />
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          [formControl]="password"
+          class="form-control"
+        />
+      </mat-form-field>
+    </tr>
+  </table>
+
+  <button mat-raised-button color="primary" (click)="login()">Login</button>
+</mat-card>

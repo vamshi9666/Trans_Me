@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   login() {
     console.log(this.auth);
+    if (this.email.value.trim() === "" || this.password.value.trim() == "") {
+      this.error = "enter email and password";
+      return;
+    }
     this.auth.login(this.email.value, this.password.value).subscribe(
       data => {
         console.log(" response from login is ", data);

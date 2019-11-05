@@ -1,3 +1,43 @@
 .error {
   color: red;
 }
+
+.whole-con {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.login-form {
+  display: flex;
+  flex: 1;
+}
+
+.right-form {
+  display: flex;
+  flex: 1;
+  object-fit: contain;
+  /* 
+  background-image: url("https://res.cloudinary.com/dwo8ep45k/image/upload/v1572835604/2598566_oek6ez.jpg");
+  background-size: "100%";
+  background-repeat: no-repeat; */
+}
+
+.login-form-tab {
+  display: flex;
+
+  flex: 1;
+
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.actions-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-tab-body-content {
+  overflow: hidden;
+}

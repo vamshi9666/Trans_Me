@@ -26,4 +26,29 @@ export class RoutesService {
       }
     });
   }
+  addNewRoute(obj) {
+    const token = localStorage.getItem("AUTH_TOKEN");
+    return this.http.post(API_URL + "/existing_routes", obj, {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
+  }
+  updateRoute(obj) {
+    const token = localStorage.getItem("AUTH_TOKEN");
+    return this.http.patch(API_URL + "/existing_routes/" + obj.routeId, obj, {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
+  }
+  deleteRoute (routeId ){
+    const token = localStorage.getItem("AUTH_TOKEN");
+    return this.http.delete(API_URL+'/existing_routes/'+routeId, { 
+      headers:{
+        Authorization: "Bearer " + token
+
+      }
+    })
+  }
 }

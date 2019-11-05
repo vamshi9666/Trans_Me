@@ -1,0 +1,18 @@
+<div
+  class="example-container"
+  style="display: flex;flex-direction: column; justify-content: space-between; 
+align-items: center;
+;"
+>
+  <mat-form-field>
+    <input [(ngModel)]="data.destination" matInput placeholder="Input" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input [(ngModel)]="data.no_seats" matInput placeholder="Number of seats" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="updateRoute()">
+    UPDATE
+  </button>
+</div>

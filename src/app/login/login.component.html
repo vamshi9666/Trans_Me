@@ -1,48 +1,155 @@
-<mat-card class="login-card">
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="login-form">
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" type="text" [formControl]="email" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">
-                  Username is required
-                </div>
-              </div>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" type="password" [formControl]="password" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-              <div *ngIf="submitted && f.password.errors" class="error"></div>
-            </mat-form-field>
-          </td>
-        </tr>
-        <p *ngIf="error">
-          {{ error }}
-        </p>
-      </table>
-    </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-  </mat-card-actions>
-  If not a Member Register Here
-  <mat-card-actions>
-    <form action="C:\Users\targe\Downloads\shc\smart-health-consulting\src\app\authentication\register">
-      <button mat-raised-button (click)="signUp()" color="primary">
-        signUp
-      </button>
-    </form>
-  </mat-card-actions>
-</mat-card>
+<div style="height: 100vh" class="whole-con">
+  <img
+    src="https://res.cloudinary.com/dwo8ep45k/image/upload/v1572835604/2598566_oek6ez.jpg"
+    class="right-form"
+  />
+  <div class="login-form">
+    <mat-card
+      style="width: 100%;height: 100vh; display: flex; flex-direction: column;align-items: center; justify-content: flex-start;"
+      class="login-card"
+    >
+      <mat-card-content>
+        <mat-tab-group>
+          <mat-tab label=" Login">
+            <form
+              style="padding-top: 96px;display: flex; flex-direction: column; justify-content: center;"
+              class="login-form"
+            >
+              <table class="example-full-width login-form-tab" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Username"
+                        type="text"
+                        [formControl]="email"
+                        class="form-control"
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Password"
+                        type="password"
+                        [formControl]="password"
+                        class="form-control"
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <p *ngIf="error">
+                  {{ error }}
+                </p>
+              </table>
+            </form>
+            <mat-card-actions class="actions-con">
+              <button mat-raised-button (click)="login()" color="primary">
+                Login
+              </button>
+            </mat-card-actions>
+          </mat-tab>
+          <mat-tab label="Sign Up">
+            <form
+              style="padding-top: 96px;display: flex; flex-direction: column; justify-content: center;"
+              class="login-form"
+            >
+              <table class="example-full-width login-form-tab" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Username"
+                        type="text"
+                        [formControl]="email"
+                        class="form-control"
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Password"
+                        type="password"
+                        [formControl]="password"
+                        class="form-control"
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <p *ngIf="error">
+                  {{ error }}
+                </p>
+              </table>
+            </form>
+            <mat-card-actions class="actions-con">
+              <button mat-raised-button (click)="signUp()" color="primary">
+                signUp
+              </button>
+            </mat-card-actions>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <!-- <mat-card-header
+        style="display: flex; align-items: center; justify-content: center;"
+      >
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="login-form">
+          <table class="example-full-width login-form-tab" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input
+                    matInput
+                    placeholder="Username"
+                    type="text"
+                    [formControl]="email"
+                    class="form-control"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input
+                    matInput
+                    placeholder="Password"
+                    type="password"
+                    [formControl]="password"
+                    class="form-control"
+                  />
+                </mat-form-field>
+              </td>
+            </tr>
+            <p *ngIf="error">
+              {{ error }}
+            </p>
+          </table>
+        </form>
+      </mat-card-content>
+      <mat-card-actions class="actions-con">
+        <button mat-raised-button (click)="login()" color="primary">
+          Login
+        </button>
+      </mat-card-actions>
+      If not a Member Register Here
+      <mat-card-actions class="actions-con">
+        <button mat-raised-button (click)="signUp()" color="primary">
+          signUp
+        </button>
+      </mat-card-actions> -->
+    </mat-card>
+  </div>
+</div>
