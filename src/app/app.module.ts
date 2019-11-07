@@ -29,6 +29,7 @@ import { LoginComponent } from "./login/login.component";
 import { SignupModalComponent } from "./signup-modal/signup-modal.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { EditModalComponent } from "./edit-modal/edit-modal.component";
+import { RouteDetailsModalComponent } from './route-details-modal/route-details-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { EditModalComponent } from "./edit-modal/edit-modal.component";
     LoginComponent,
     SignupModalComponent,
     AdminLoginComponent,
-    EditModalComponent
+    EditModalComponent,
+    RouteDetailsModalComponent
   ],
   imports: [
     BrowserModule,

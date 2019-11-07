@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card style="display: flex;justify-content: center;">
   <table>
     <tr>
       Admin login
@@ -26,7 +26,13 @@
         />
       </mat-form-field>
     </tr>
+    <tr *ngIf="error">
+      {{
+        error
+      }}
+    </tr>
+    <tr>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </tr>
   </table>
-
-  <button mat-raised-button color="primary" (click)="login()">Login</button>
 </mat-card>

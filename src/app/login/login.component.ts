@@ -78,4 +78,7 @@ export class LoginComponent implements OnInit {
     //   }
     // );
   }
+  goToAdmin() {
+    this.router.navigate(["_admin_login"]);
+  }
 }

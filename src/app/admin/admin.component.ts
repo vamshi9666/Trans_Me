@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { MatTableDataSource, MatDialog, MatSnackBar } from "@angular/material";
 import { RoutesService } from "../routes.service";
 import { EditModalComponent } from "../edit-modal/edit-modal.component";
+import { RouteDetailsModalComponent } from "../route-details-modal/route-details-modal.component";
 
 @Component({
   selector: "app-admin",
@@ -16,7 +17,8 @@ export class AdminComponent implements OnInit {
     "destination",
     "no_seats",
     "actions",
-    "delete"
+    "delete",
+    "details"
   ];
   public form = {
     destination: "",
@@ -82,7 +84,6 @@ export class AdminComponent implements OnInit {
     });
   }
   deleteRoute(route) {
-    console.log(route);
     this.routeService.deleteRoute(route.routeId).subscribe(
       data => {
         this.snack.open("deleted route ");
@@ -92,5 +93,13 @@ export class AdminComponent implements OnInit {
         this.snack.open(" error in deleting route ");
       }
     );
+  }
+  showDetails(route) {
+    const dialog = this.dialog.open(RouteDetailsModalComponent, {
+      data: route
+    });
+    dialog.afterClosed().subscribe(() => {
+      this.arrangeData();
+    });
   }
 }
