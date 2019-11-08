@@ -42,13 +42,20 @@ export class RoutesService {
       }
     });
   }
-  deleteRoute (routeId ){
+  deleteRoute(routeId) {
     const token = localStorage.getItem("AUTH_TOKEN");
-    return this.http.delete(API_URL+'/existing_routes/'+routeId, { 
-      headers:{
+    return this.http.delete(API_URL + "/existing_routes/" + routeId, {
+      headers: {
         Authorization: "Bearer " + token
-
       }
-    })
+    });
+  }
+  getOneRoute(routeId): Observable<any> {
+    const token = localStorage.getItem("AUTH_TOKEN");
+    return this.http.get(API_URL + "/requested_routes/route/" + routeId, {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
   }
 }

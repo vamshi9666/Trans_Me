@@ -17,7 +17,9 @@ import {
   MatIconModule,
   MatSnackBarModule,
   MatTabGroup,
-  MatTabsModule
+  MatTabsModule,
+  MatListModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ApplyModalComponent } from "./apply-modal/apply-modal.component";
@@ -29,7 +31,7 @@ import { LoginComponent } from "./login/login.component";
 import { SignupModalComponent } from "./signup-modal/signup-modal.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { EditModalComponent } from "./edit-modal/edit-modal.component";
-import { RouteDetailsModalComponent } from './route-details-modal/route-details-modal.component';
+import { RouteDetailsModalComponent } from "./route-details-modal/route-details-modal.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,14 +62,17 @@ import { RouteDetailsModalComponent } from './route-details-modal/route-details-
     MatToolbarModule,
     MatIconModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule,
+    MatPaginatorModule
   ],
   providers: [RoutesService],
   bootstrap: [AppComponent],
   entryComponents: [
     ApplyModalComponent,
     SignupModalComponent,
-    EditModalComponent
+    EditModalComponent,
+    RouteDetailsModalComponent
   ]
 })
 export class AppModule {}
