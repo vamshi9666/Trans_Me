@@ -1,46 +1,42 @@
 <div class="container">
-  <form class="login-form">
-    <mat-form-field class="example-full-width">
-      <input
-        matInput
-        placeholder="Username"
-        type="text"
-        [formControl]="name"
-        class="form-control"
-      />
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Name"
+      type="text"
+      [formControl]="name"
+      class="form-control"
+      required
+    />
+  </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        maxlength="32"
-        placeholder="College ID"
-        [formControl]="collegeId"
-      />
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      maxlength="32"
+      placeholder="ID"
+      [formControl]="collegeId"
+      required
+    />
+  </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Enter your email"
-        [formControl]="email"
-        required
-      />
-    </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [formControl]="email" required />
+  </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Enter your password"
-        [formControl]="password"
-        type="password"
-      />
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Password"
+      [formControl]="password"
+      type="password"
+      required
+    />
+  </mat-form-field>
 
-    <!-- <mat-form-field [formControl]="collegeId" > 
+  <!-- <mat-form-field [formControl]="collegeId" > 
         <input matInput #input maxlength="32" placeholder="Location">
         <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
     </mat-form-field> -->
-    <button (click)="signup()" mat-raised-button color="primary">Signup</button>
-  </form>
+  <button (click)="signup()" mat-raised-button color="primary">Signup</button>
 </div>

@@ -1,5 +1,10 @@
 import { Component, OnInit, Inject, ViewChild } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA, MatPaginator } from "@angular/material";
+import {
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MatPaginator,
+  MatTableDataSource
+} from "@angular/material";
 import { RoutesService } from "../routes.service";
 import { DataSource } from "@angular/cdk/table";
 
@@ -11,7 +16,7 @@ import { DataSource } from "@angular/cdk/table";
 export class RouteDetailsModalComponent implements OnInit {
   info: any;
   error: any;
-  displayedColumns: string[] = ["email"];
+  displayedColumns: string[] = ["id", "name", "email"];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   constructor(
     public dialog: MatDialogRef<RouteDetailsModalComponent>,
@@ -28,7 +33,7 @@ export class RouteDetailsModalComponent implements OnInit {
             return { ...studentId };
           });
           console.log(" studetns are ", students);
-          this.info = students;
+          this.info = new MatTableDataSource(students);
           this.info.paginator = this.paginator;
         } else {
           this.error = "something went wrong ";
