@@ -45,6 +45,10 @@ export class ListComponent implements OnInit {
     confirmationDialog.afterClosed().subscribe(data => {
       console.log(" one ");
       this.arrangeData();
+      setTimeout(() => {
+        localStorage.clear();
+    window.location.replace("/");
+      })
       // this.routeService
       //   .addStudentroute({
       //     studentId: userId,
