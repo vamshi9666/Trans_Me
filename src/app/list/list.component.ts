@@ -70,7 +70,7 @@ export class ListComponent implements OnInit {
       data.data.map((route: any, i) => {
         arr.push({
           index: i,
-          route_index: i * 2,
+          route_index: route.route_index || "",
           routeId: route._id,
           destination: route.destination,
           no_seats: route.no_seats
